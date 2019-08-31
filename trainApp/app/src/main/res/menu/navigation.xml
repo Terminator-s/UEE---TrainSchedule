@@ -5,6 +5,7 @@
             android:id="@+id/navigation_recent"
             android:icon="@drawable/ic_settings_backup_restore_black_24dp"
             android:title="@string/title_recent"/>
+            >
 
     <item
             android:id="@+id/navigation_dashboard"
