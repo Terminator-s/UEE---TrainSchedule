@@ -6,26 +6,26 @@
 
 
     <string name="string_help_1">
-        <br> This Application consists of four card </br>
-        <br> view tabs and bottom navigation tabs. </br>
-        <br> Those are called Search, Notices, </br>
-        <br> History, Settings and Home. </br>
+        <br>This Application consists of four card</br>
+        <br>view tabs and bottom navigation tabs.</br>
+        <br>Those are called Search, Notices,</br>
+        <br>History, Settings and Home.</br>
     </string>
     <string name="string_help_2">
-        <br> In search tab you can find trains based </br>
-        <br> on starting station to ending station </br>
-        <br> depending on the next available train or the daily schedule. </br>
+        <br>In search tab you can find trains based</br>
+        <br>on starting station to ending station</br>
+        <br>depending on the next available train or the daily schedule.</br>
     </string>
     <string name="string_help_3">
-        <br> The searches can filter according to </br>
-        <br> date and time. </br>
+        <br>The searches can filter according to</br>
+        <br>date and time.</br>
     </string>
     <string name="string_help_4">
-        <br> Once you have entered the search you </br>
-        <br> will get train schedule list from </br>
-        <br> which you can obtained detailed </br>
-        <br> information on a selected scheduled </br>
-        <br> station station to ending station, </br>
-        <br> time and date. </br>
+        <br>Once you have entered the search you</br>
+        <br>will get train schedule list from</br>
+        <br>which you can obtained detailed</br>
+        <br>information on a selected scheduled</br>
+        <br>station station to ending station,</br>
+        <br>time and date.</br>
     </string>
 </resources>
