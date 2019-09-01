@@ -1,36 +1,34 @@
 package com.example.trainapp;
 
-import android.app.Activity;
+
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HistoryMainActivity extends AppCompatActivity {
-
+public class HistoryFragment extends Fragment {
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_history);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        RecyclerView recList = (RecyclerView) findViewById(R.id.recyclerView);
+        View rootView= inflater.inflate(R.layout.activity_search_history, null);
+        RecyclerView recList = (RecyclerView) rootView.findViewById(R.id.recyclerView);
         recList.setHasFixedSize(true);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
+        LinearLayoutManager llm = new LinearLayoutManager(this.getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
 
         HistoryAdapter ca = new HistoryAdapter(createList(30));
         recList.setAdapter(ca);
+        return rootView;
     }
-
-
-
-
     private List<History> createList(int size) {
 
         List<History> result = new ArrayList<History>();
@@ -49,4 +47,5 @@ public class HistoryMainActivity extends AppCompatActivity {
 
         return result;
     }
+
 }

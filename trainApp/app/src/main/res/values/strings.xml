@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">trainApp</string>
     <string name="title_recent">Recent</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_search">Search</string>
     <string name="title_notifications">Notices</string>
 
 
