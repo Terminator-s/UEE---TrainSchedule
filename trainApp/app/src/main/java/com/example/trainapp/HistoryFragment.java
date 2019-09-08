@@ -1,7 +1,6 @@
 package com.example.trainapp;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -28,8 +27,6 @@ public class HistoryFragment extends Fragment {
 
         HistoryAdapter ca = new HistoryAdapter(createList(30));
         recList.setAdapter(ca);
-
-
         return rootView;
     }
     private List<History> createList(int size) {
@@ -50,6 +47,5 @@ public class HistoryFragment extends Fragment {
 
         return result;
     }
-
 
 }
