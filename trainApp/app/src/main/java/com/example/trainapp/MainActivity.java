@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
 
             case R.id.navigation_notifications:
-                mTextMessage.setText(R.string.title_notifications);
+                //fragment = new HistoryDetail();
                 break;
 
         }

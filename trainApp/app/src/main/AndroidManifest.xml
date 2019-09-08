@@ -9,7 +9,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".SearchFragment">
+        <activity android:name=".HistoryDetail">
         </activity>
         <activity
                 android:name=".MainActivity"
