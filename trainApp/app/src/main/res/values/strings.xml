@@ -3,7 +3,8 @@
     <string name="title_recent">Recent</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notices</string>
-
+    <string name="notifications">Notifications</string>
+    <string name="Sound">Sound</string>
 
     <string name="string_help_1">
         <br>This Application consists of four card</br>

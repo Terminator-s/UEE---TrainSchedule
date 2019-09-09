@@ -17,23 +17,4 @@ public class History {
         this.timestamp = timestamp;
     }
 
-    public void setStartStation(String startStation) {
-        this.startStation = startStation;
-    }
-
-    public String getEndStation() {
-        return endStation;
-    }
-
-    public void setEndStation(String endStation) {
-        this.endStation = endStation;
-    }
-
-    public String getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
-    }
 }

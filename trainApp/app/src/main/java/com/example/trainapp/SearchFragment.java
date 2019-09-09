@@ -1,4 +1,4 @@
 package com.example.trainapp;
 
-public class NoticeMain {
+public class SearchFragment {
 }

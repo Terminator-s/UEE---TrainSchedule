@@ -1,4 +1,4 @@
-package com.example.homepage;
+package com.example.trainapp;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,14 +17,14 @@ public class Help extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_Search:
-                    mTextMessage.setText(R.string.Search);
+                case R.id.navigation_dashboard:
+                    mTextMessage.setText(R.string.title_dashboard);
                     return true;
-                case R.id.navigation_Recant:
-                    mTextMessage.setText(R.string.Recant);
+                case R.id.navigation_recent:
+                    mTextMessage.setText(R.string.title_recent);
                     return true;
-                case R.id.navigation_Notifications:
-                    mTextMessage.setText(R.string.Notifications);
+                case R.id.navigation_notifications:
+                    mTextMessage.setText(R.string.title_notifications);
                     return true;
             }
             return false;

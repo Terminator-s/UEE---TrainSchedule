@@ -17,7 +17,7 @@
             android:layout_marginTop="4dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.045"
             android:textSize="24sp" android:textStyle="bold"
-            android:textColor="@color/design_default_color_primary_dark"/>
+            android:textColor="@color/colorPrimaryDark"/>
 
     <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"
@@ -38,7 +38,8 @@
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.084"
             android:textStyle="bold" android:textAlignment="viewStart"
             android:textSize="14sp" android:textColor="@android:color/background_dark" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/Settings" app:layout_constraintVertical_bias="0.006"/>
+            app:layout_constraintTop_toBottomOf="@+id/Settings" app:layout_constraintVertical_bias="0.006"
+            android:layout_marginLeft="1dp" android:layout_marginRight="8dp" android:gravity="start"/>
     <RatingBar
             android:layout_width="249dp"
             android:layout_height="45dp"
@@ -49,7 +50,8 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="1dp"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/settings_rating"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="@+id/navigation"
-            app:layout_constraintHorizontal_bias="0.196" app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintHorizontal_bias="0.196" app:layout_constraintVertical_bias="0.0"
+            android:layout_marginLeft="1dp" android:layout_marginRight="8dp"/>
 <!--    <Button-->
 <!--            android:text="CKECK"-->
 <!--            android:layout_width="wrap_content"-->
