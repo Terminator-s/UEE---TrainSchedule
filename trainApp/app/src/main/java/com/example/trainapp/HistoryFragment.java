@@ -4,6 +4,10 @@ package com.example.trainapp;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,15 +22,14 @@ public class HistoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View rootView= inflater.inflate(R.layout.activity_search_history, null);
+        View rootView= inflater.inflate(R.layout.activity_search_history, container,false);
         RecyclerView recList = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-        recList.setHasFixedSize(true);
-        LinearLayoutManager llm = new LinearLayoutManager(this.getActivity());
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        recList.setLayoutManager(llm);
+        recList.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         HistoryAdapter ca = new HistoryAdapter(createList(30));
         recList.setAdapter(ca);
+        recList.setItemAnimator(new DefaultItemAnimator());
+
         return rootView;
     }
     private List<History> createList(int size) {

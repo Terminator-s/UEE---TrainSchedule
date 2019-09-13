@@ -6,14 +6,71 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".SearchFragment">
-    <TextView
+    <Spinner
+            android:layout_width="300dp"
+            android:layout_height="40dp" android:id="@+id/startSpinner"
+            android:prompt="@string/start_station_prompt"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="80dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="44dp" android:layout_marginStart="44dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="67dp" android:layout_marginRight="67dp"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <Spinner
+            android:layout_width="300dp"
+            android:layout_height="40dp" android:id="@+id/endSpinner"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="56dp"
+            android:layout_marginRight="56dp" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/startSpinner"
+            android:prompt="@string/end_station_prompt"/>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="68dp" app:layout_constraintTop_toBottomOf="@+id/endSpinner"
+            android:id="@+id/constraintLayout2" app:layout_constraintHorizontal_bias="0.0">
+        <TextView
+                android:text="@string/date"
+                android:layout_width="300dp"
+                android:layout_height="50dp" android:id="@+id/date"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="23dp" android:layout_marginStart="23dp"
+                app:layout_constraintEnd_toStartOf="@+id/datebtn" android:layout_marginEnd="22dp"
+                android:layout_marginRight="22dp" android:layout_marginBottom="29dp"
+                app:layout_constraintBottom_toTopOf="@+id/time"/>
+        <TextView
+                android:text="@string/time"
+                android:layout_width="300dp"
+                android:layout_height="50dp" android:id="@+id/time"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="23dp"
+                android:layout_marginStart="23dp" app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/timebtn"
+                android:layout_marginEnd="22dp" android:layout_marginRight="22dp"/>
+        <Button
+                android:text="c"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/datebtn"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="16dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp" android:layout_marginRight="16dp"/>
+        <Button
+                android:text="t"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/timebtn" android:layout_marginEnd="16dp" android:layout_marginRight="16dp"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="30dp"/>
+    </android.support.constraint.ConstraintLayout>
+    <Button
             android:text="Search"
-            android:layout_width="116dp"
-            android:layout_height="63dp"
-            android:id="@+id/textView2" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-            app:layout_constraintHorizontal_bias="0.422" app:layout_constraintVertical_bias="0.309"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnSubmit"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="161dp"
+            android:layout_marginStart="161dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="162dp" android:layout_marginRight="162dp" android:layout_marginBottom="145dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="13dp" app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"/>
 </android.support.constraint.ConstraintLayout>

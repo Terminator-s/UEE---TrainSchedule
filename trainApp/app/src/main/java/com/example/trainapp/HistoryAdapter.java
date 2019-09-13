@@ -1,7 +1,6 @@
 package com.example.trainapp;
 
-import android.content.DialogInterface;
-import android.content.Intent;
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,18 +10,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
+
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder> {
     private List<History> historyList;
-
     public HistoryAdapter(List<History> historyList) {
         this.historyList = historyList;
     }
-
+    private Context context;
 
     @Override
     public int getItemCount() {
@@ -31,13 +30,19 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
     @Override
     public void onBindViewHolder(HistoryViewHolder historyViewHolder, int i) {
-
-        History ci = historyList.get(i);
+        History ci= historyList.get(i);
         historyViewHolder.vStart.setText(ci.startStation);
         historyViewHolder.vEnd.setText(ci.endStation);
         historyViewHolder.vTime.setText(ci.timestamp);
         historyViewHolder.vTitle.setText(ci.startStation + "-" + ci.endStation);
-
+        historyViewHolder.card_item.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                Fragment myFragment = new HistoryDetail();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_container, myFragment).addToBackStack(null).commit();
+            }
+        });
     }
 
     @Override
@@ -45,7 +50,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
         View itemView = LayoutInflater.
                 from(viewGroup.getContext()).
                 inflate(R.layout.list_item, viewGroup, false);
-
 
         return new HistoryViewHolder(itemView);
     }
@@ -66,15 +70,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
             vEnd = (TextView)  v.findViewById(R.id.title);
             card_item = (CardView) v.findViewById(R.id.card_view);
 
-            card_item.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                   AppCompatActivity activity =(AppCompatActivity) new AppCompatActivity();
-                   Fragment fragment=new Fragment();
-                   activity.getSupportFragmentManager().beginTransaction().addToBackStack(null).commit();
 
-                }
-            });
 
         }
     }

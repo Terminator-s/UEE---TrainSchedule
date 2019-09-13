@@ -1,20 +1,23 @@
 package com.example.trainapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private TextView mTextMessage;
-    Fragment fragment = null;
-
+    final Fragment fragment1 = new HistoryDetail();
+    final Fragment fragment2 = new HistoryFragment();
+    //final Fragment fragment3 = new NoticeFragment();
+    final FragmentManager fm = getSupportFragmentManager();
+    Fragment active = fragment1;
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
 
             case R.id.navigation_notifications:
-                //fragment = new HistoryDetail();
+                fragment = new NoticeFragment();
                 break;
 
         }
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+                    .replace(R.id.main_container, fragment).addToBackStack(null)
                     .commit();
             return true;
         }
@@ -52,20 +55,43 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         //loading the default fragment
         loadFragment(new SearchFragment());
 
         //getting bottom navigation view and attaching the listener
         BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setSelectedItemId(R.id.navigation_search);
         navigation.setOnNavigationItemSelectedListener(this);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
-        return true;
+
+        return super.onCreateOptionsMenu(menu);
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        Fragment fragment = null;
+        switch (id) {
+            case R.id.settings:
+                fragment = new SettingsFragment();
+                break;
+
+            case R.id.help:
+                fragment = new HelpFragment();
+                break;
+
+
+        }
+
+        return loadFragment(fragment);
+    }
+
+
 
 }

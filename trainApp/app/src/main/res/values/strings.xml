@@ -63,7 +63,7 @@
 
     <string name="rating">RATING</string>
 
-    <string name="aboutUs">ABOUTUS</string>
+    <string name="aboutUs">ABOUT US</string>
 
     <string name="feedback">FEEDBACK</string>
 
@@ -82,4 +82,25 @@
     <string name="available">Available</string>
 
     <string name="Classes">Classes</string>
+
+    <string name="time">Pick Time</string>
+    <string name="date">Pick Date</string>
+
+    <string name="start_station_prompt">Enter Start Station</string>
+    <string name="end_station_prompt">Enter End Station</string>
+
+    <string-array name="stations_array">
+        <item>fort</item>
+        <item>galle</item>
+        <item>maradana</item>
+        <item>dematagoda</item>
+        <item>jaffna</item>
+        <item>badulla</item>
+        <item>anuradapura</item>
+    </string-array>
+
+    <string name="title_notice">Notices</string>
+    <string name="notifications">Notifications</string>
+    <string name="Sound">Sound</string>
+
 </resources>
